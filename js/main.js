@@ -7,108 +7,78 @@
 // MILESTONE 2:
 // Stampare le stesse informazioni su DOM sottoforma di stringhe
 
+
+
+const cardTeamEl = document.getElementById("container-team-cards");
 // Array di object per rappresentare il team
 const arrayTeam = [
+    // object con le rispettive informazioni
 
-    persona = [
-        // object con le rispettive informazioni
-
-        // object 0
-        {
-            nome: "Wayne Barnett",
-            ruolo: "Founder e CEO",
-            foto: "wayne-barnett-founder-ceo.jpg",
-        },
+    // object 0
+    {
+        nome: "Wayne Barnett",
+        ruolo: "Founder e CEO",
+        foto: "wayne-barnett-founder-ceo.jpg",
+    },
 
 
-        // object 1
-        {
-            nome: "Angela Caroll",
-            ruolo: "Chief Editor",
-            foto: "angela-caroll-chief-editor.jpg"
-        },
+    // object 1
+    {
+        nome: "Angela Caroll",
+        ruolo: "Chief Editor",
+        foto: "angela-caroll-chief-editor.jpg"
+    },
 
-        // object 2
-        {
-            nome: "Walter Gordon",
-            ruolo: "Office Manager",
-            foto: "walter-gordon-office-manager.jpg"
-        },
+    // object 2
+    {
+        nome: "Walter Gordon",
+        ruolo: "Office Manager",
+        foto: "walter-gordon-office-manager.jpg"
+    },
 
-        // object 3
-        {
-            nome: "Angela Lopez",
-            ruolo: "Social Media Manager",
-            foto: "angela-lopez-social-media-manager.jpg"
-        },
+    // object 3
+    {
+        nome: "Angela Lopez",
+        ruolo: "Social Media Manager",
+        foto: "angela-lopez-social-media-manager.jpg"
+    },
 
-        // object 4
-        {
-            nome: "Scott Estrada",
-            ruolo: "Developer",
-            foto: "scott-estrada-developer.jpg"
-        },
+    // object 4
+    {
+        nome: "Scott Estrada",
+        ruolo: "Developer",
+        foto: "scott-estrada-developer.jpg"
+    },
 
-        // object 5
-        {
-            nome: "Barbara Ramos",
-            ruolo: "Graphic Dedigner",
-            foto: "barbara-ramos-graphic-designer.jpg"
-        }
-
-    ]
+    // object 5
+    {
+        nome: "Barbara Ramos",
+        ruolo: "Graphic Dedigner",
+        foto: "barbara-ramos-graphic-designer.jpg"
+    }
 
 ]
 
-for (proprieta in persona) {
-    console.log(persona[proprieta]);
+
+for (const persona of arrayTeam) {
+    console.log("nome: " + persona.nome);
+    console.log("ruolo: " + persona.ruolo);
+    console.log("url: " + persona.foto);
+
+    // CARDS TEAM (creati in JS(con bootstrap) e inseriti nel DOM)
+    const cardTeamHtml = `
+    <div class="col ">
+    <div class="card text-center mt-3">
+    <img src="./img/${persona.foto}" class="card-img-top" alt="foto">
+    <div class="card-body">
+        <h5 class="card-title">${persona.nome}</h5>
+        <p class="card-text">${persona.ruolo}</p>
+    </div>
+    </div>
+    </div>
+       `
+    cardTeamEl.innerHTML += cardTeamHtml;
 }
-
-// Stampare le stesse informazioni su DOM sottoforma di stringhe
-// creare un div e inserire l'oggetto con le rispettive info...x6
-const cardTeamEl = document.getElementById("container-team-cards");
-cardTeamEl.innerHTML = `
-<div>
-    ${persona[0].nome} <br>
-    ${persona[0].ruolo}<br>
-    ${persona[0].foto}
-</div>
-<br>
-
-<div>
-    ${persona[1].nome} <br>
-    ${persona[1].ruolo}<br>
-    ${persona[1].foto}
-</div>
-<br>
-
-<div>
-    ${persona[2].nome} <br>
-    ${persona[2].ruolo}<br>
-    ${persona[2].foto}
-</div>
-<br>
-
-<div>
-    ${persona[3].nome} <br>
-    ${persona[3].ruolo}<br>
-    ${persona[3].foto}
-</div>
-<br>
-
-<div>
-    ${persona[4].nome} <br>
-    ${persona[4].ruolo}<br>
-    ${persona[4].foto}
-</div>
-<br>
-
-<div>
-    ${persona[5].nome} <br>
-    ${persona[5].ruolo}<br>
-    ${persona[5].foto}
-</div>
-    `
 
 
 
